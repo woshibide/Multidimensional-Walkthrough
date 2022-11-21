@@ -5,16 +5,24 @@ using UnityEngine;
 public class ScoreSystem : MonoBehaviour
 {
     EnemyScript enemyScript;
+    private int scoreMultiplier;
 
-    // Start is called before the first frame update
+
     void Awake()
     {
         enemyScript = GetComponent<EnemyScript>();
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        int currentScore = 0;
+        int scoreMultiplier = 10; // will be changed according to dimension 
+    }
+
     void Update()
     {
-        Debug.Log("killed enemies: " + enemyScript.deadEnemies);
+        Debug.Log("im working");
+        //Debug.Log("killed enemies: " + enemyScript.deadEnemies);
+        //Debug.Log("score: " + (enemyScript.deadEnemies * scoreMultiplier));
     }
 }

@@ -18,7 +18,7 @@ public class EnemyBulletScript : MonoBehaviour
             // doesnt work with ricochetted bullets or just some bullets stay behind
             // ????????????????????????
 
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 1.0f);
             Debug.Log("bullet destroyed");
         }
     }

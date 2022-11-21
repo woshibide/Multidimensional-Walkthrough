@@ -10,6 +10,11 @@ public class FireBullet : MonoBehaviour
     public GameObject bullet;
     public float bulletSpeed = 50f;
 
+    public void Start()
+    {
+        playerScript = GetComponent<PlayerScript>(); ;
+    }
+
     public void Shoot()
     {
         GameObject cB = Instantiate(bullet, spawnPoint.position, bullet.transform.rotation);
@@ -17,7 +22,8 @@ public class FireBullet : MonoBehaviour
         rig.AddForce(spawnPoint.forward * bulletSpeed, ForceMode.Impulse);
 
         Debug.Log("player fired");
-        Debug.Log("ammo left " + playerScript.currentAmmo); // why this doesnt show up???????????????
+        
+        
     }
 
     public void Update()
@@ -25,6 +31,9 @@ public class FireBullet : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
+            playerScript.currentAmmo--;
+            // should be attached to the same gameobject
+            Debug.Log("ammo left " + playerScript.currentAmmo); 
         }
     }
 }

@@ -16,6 +16,32 @@ public class PlayerMovement : MonoBehaviour
 
     public SpawnManager spawnManager;
 
+    void Boundaries()
+    {
+        //Restrict player from leaving region 
+        transform.position = new Vector3(
+        Math.Clamp(transform.position.x, minBoundaries.x, maxBoundaries.x),
+        Math.Clamp(transform.position.y, minBoundaries.y, maxBoundaries.y),
+        Math.Clamp(transform.position.z, minBoundaries.z, maxBoundaries.z));
+    }
+
+    void Movement()
+    {
+        Boundaries();
+
+        // Get input
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        var forwardInput = Input.mouseScrollDelta;
+
+
+        //convert input into movement
+        transform.position += new Vector3(
+            horizontalInput * axisMoveSpeed * Time.deltaTime / 10,
+            verticalInput * axisMoveSpeed * Time.deltaTime / 10,
+            forwardInput.y / 10);
+    }
+
     void Update()
     {
         // ??????
@@ -24,34 +50,6 @@ public class PlayerMovement : MonoBehaviour
         
         Movement();
 
-        void Movement()
-        {
-            Boundaries();
-
-            // Get input
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
-            float verticalInput = Input.GetAxisRaw("Vertical");
-            var forwardInput = Input.mouseScrollDelta;
-            // ??????
-            // how to rotate directional light on Z position of the player?
-            // ??????
-
-
-            //convert input into movement
-            transform.position += new Vector3(
-                horizontalInput * axisMoveSpeed * Time.deltaTime / 10,
-                verticalInput * axisMoveSpeed * Time.deltaTime / 10,
-                forwardInput.y / 10);
-        }
-    }
-
-    void Boundaries()
-    {
-        //Restrict player from leaving region 
-        transform.position = new Vector3(
-        Math.Clamp(transform.position.x, minBoundaries.x, maxBoundaries.x),
-        Math.Clamp(transform.position.y, minBoundaries.y, maxBoundaries.y),
-        Math.Clamp(transform.position.z, minBoundaries.z, maxBoundaries.z));
     }
 
     private void OnTriggerEnter(Collider other)

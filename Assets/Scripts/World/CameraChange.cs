@@ -20,7 +20,7 @@ public class CameraChange : MonoBehaviour
     void Update()
     {
         // change camera on input
-        if (cam1D.gameObject.activeSelf && Input.GetKeyDown("tab")) // if player's model is affected by physics, model flies away from the camera
+        if (cam1D.gameObject.activeSelf && Input.GetKeyDown("tab"))
         {
             cam1D.gameObject.SetActive(false);
             cam2D.gameObject.SetActive(true);
