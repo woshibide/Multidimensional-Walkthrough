@@ -10,27 +10,21 @@ public class FireBullet : MonoBehaviour
     public GameObject bullet;
     public float bulletSpeed = 50f;
 
-    public void ShootBullet()
+    public void Shoot()
     {
-        if (playerScript.currentAmmo > playerScript.minAmmo)
+        GameObject cB = Instantiate(bullet, spawnPoint.position, bullet.transform.rotation);
+        Rigidbody rig = cB.GetComponent<Rigidbody>();
+        rig.AddForce(spawnPoint.forward * bulletSpeed, ForceMode.Impulse);
+
+        Debug.Log("player fired");
+        Debug.Log("ammo left " + playerScript.currentAmmo); // why this doesnt show up???????????????
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("if entered");
-            GameObject cB = Instantiate(bullet, spawnPoint.position, bullet.transform.rotation);
-            Debug.Log("18th line read");
-            Rigidbody rig = cB.GetComponent<Rigidbody>();
-            Debug.Log("21st line read");
-
-            rig.AddForce(spawnPoint.forward * bulletSpeed, ForceMode.Impulse);
-            Debug.Log("24th line read");
-
-            playerScript.currentAmmo--;
-            Debug.Log("26th line read");
-
-            Debug.Log("bullet was shot");
-        }
-        else
-        {
-            Debug.Log("No ammo to fire");
+            Shoot();
         }
     }
 }

@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour
 {
     public int enemyHealth = 20;
     public bool enemyDead = false;
+    public int deadEnemies = 0;
 
     Rigidbody m_Rigidbody;
 
@@ -28,9 +29,7 @@ public class EnemyScript : MonoBehaviour
             enemyDead = true;
             Destroy(gameObject);
 
-            // GlobalScore.ScoreValue += 700;
-            // GlobalComplete.EnemyCount += 1;
-            // this.GetComponent<BoxCollider>().enabled = false;
+            deadEnemies++;
         }
     }
 }

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
 {
     public float axisMoveSpeed = 3.5f;
-    //FireBullet fireBullet;
+    FireBullet fireBullet;
 
     // define region of movement
     [SerializeField] private Vector3 minBoundaries = new(-2.5f, 0.3f, float.NegativeInfinity);
@@ -18,12 +18,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // ??????
+        // is this a good practice?
+        // ??????
+        
         Movement();
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    fireBullet.ShootBullet();
-        //}
-         
 
         void Movement()
         {
@@ -33,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
             float horizontalInput = Input.GetAxisRaw("Horizontal");
             float verticalInput = Input.GetAxisRaw("Vertical");
             var forwardInput = Input.mouseScrollDelta;
+            // ??????
+            // how to rotate directional light on Z position of the player?
+            // ??????
+
 
             //convert input into movement
             transform.position += new Vector3(

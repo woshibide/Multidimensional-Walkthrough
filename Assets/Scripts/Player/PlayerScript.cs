@@ -24,13 +24,12 @@ public class PlayerScript : MonoBehaviour
         //reload the gun at the start
         currentAmmo = maxAmmo;
     }
-    // Start is called before the first frame update
+    
     public void TakeDamage(int damageAmount)
     {
         playerHealth -= damageAmount;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (playerHealth <= 0 && playerDead == false)

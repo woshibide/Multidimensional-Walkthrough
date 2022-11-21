@@ -9,13 +9,13 @@ public class EnemyBulletScript : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             // values of damage intake can be modified through power economy
-            collision.gameObject.GetComponent<PlayerScript>().TakeDamage(5);
+            collision.gameObject.GetComponent<PlayerScript>().TakeDamage(2);
             Destroy(gameObject);
         }
         else
         {
             // ????????????????????????
-            // doesnt work
+            // doesnt work with ricochetted bullets or just some bullets stay behind
             // ????????????????????????
 
             Destroy(gameObject, 2f);
