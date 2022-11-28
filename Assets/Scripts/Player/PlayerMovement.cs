@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
 {
     public float axisMoveSpeed = 3.5f;
-    FireBullet fireBullet;
 
     // define region of movement
     [SerializeField] private Vector3 minBoundaries = new(-2.5f, 0.3f, float.NegativeInfinity);

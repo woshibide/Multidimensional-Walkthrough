@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpawnTrigger
   - Enemy
+  - BulletSpawn
   layers:
   - Default
   - TransparentFX

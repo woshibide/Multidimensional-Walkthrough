@@ -5,29 +5,36 @@ using UnityEngine;
 public class FireBullet : MonoBehaviour
 {
     PlayerScript playerScript;
+    GameObject player;
 
-    public Transform spawnPoint;
+    public GameObject spawnPoint;
     public GameObject bullet;
     public float bulletSpeed = 50f;
 
-    public void Start()
+    void Start()
     {
-        playerScript = GetComponent<PlayerScript>();
+        player = GameObject.FindWithTag("Player");
+        playerScript = player.GetComponent<PlayerScript>();
+        Debug.Log(playerScript.currentAmmo);
     }
 
     public void Shoot()
     {
-        GameObject cB = Instantiate(bullet, spawnPoint.position, bullet.transform.rotation);
+        spawnPoint = GameObject.FindWithTag("BulletSpawn");
+        GameObject cB = Instantiate(bullet, spawnPoint.transform.position, bullet.transform.rotation);
         Rigidbody rig = cB.GetComponent<Rigidbody>();
-        rig.AddForce(spawnPoint.forward * bulletSpeed, ForceMode.Impulse);
+        rig.AddForce(spawnPoint.transform.forward * bulletSpeed, ForceMode.Impulse);
     }
 
-    public void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Shoot();
-            playerScript.currentAmmo--;
+            if (playerScript.currentAmmo > 0)
+            {
+                Shoot();
+                playerScript.currentAmmo--;
+            }
             // should be attached to the same gameobject
             Debug.Log("ammo left " + playerScript.currentAmmo);
         }
