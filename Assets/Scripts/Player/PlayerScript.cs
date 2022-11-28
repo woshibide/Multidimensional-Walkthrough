@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 
@@ -40,7 +41,8 @@ public class PlayerScript : MonoBehaviour
         if (playerHealth <= 0 && playerDead == false)
         {
             playerDead = true;
-            Destroy(gameObject);
+            SceneManager.LoadScene("NonGame");
+            //Destroy(gameObject);
         }
     }
 }
