@@ -28,8 +28,10 @@ public class EnemyScript : MonoBehaviour
         {
             GameObject player = GameObject.FindWithTag("Player");
             var playerScript = player.GetComponent<PlayerScript>();
+
             playerScript.TakeDamage(-5);
             playerScript.deadEnemies++;
+
             enemyDead = true;
             Destroy(gameObject);
         }

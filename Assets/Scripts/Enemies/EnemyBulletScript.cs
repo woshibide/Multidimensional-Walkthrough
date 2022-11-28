@@ -12,14 +12,11 @@ public class EnemyBulletScript : MonoBehaviour
             collision.gameObject.GetComponent<PlayerScript>().TakeDamage(2);
             Destroy(gameObject);
         }
+
         else
         {
-            // ????????????????????????
-            // doesnt work with ricochetted bullets or just some bullets stay behind
-            // ????????????????????????
-
             Destroy(gameObject, 1.0f);
-            Debug.Log("bullet destroyed");
+            //Debug.Log("bullet destroyed");
         }
     }
 }

@@ -44,12 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // ??????
-        // is this a good practice?
-        // ??????
-        
         Movement();
-
     }
 
     private void OnTriggerEnter(Collider other)

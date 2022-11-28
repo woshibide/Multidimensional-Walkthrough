@@ -16,7 +16,10 @@ public class PlayerScript : MonoBehaviour
     public int maxAmmo = 15;
     public int minAmmo = 0;
 
+
+    // score
     public int deadEnemies = 0;
+    public int scoreMultiplier = 0;
 
     public void Start()
     {

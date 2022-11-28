@@ -7,10 +7,10 @@ public class FloorSpawner : MonoBehaviour
 {
     public List<GameObject> floors;
     
-    [SerializeField] private GameObject floorScale;
-    [SerializeField] private float floorOffset = 10f;
+    //[SerializeField] private GameObject floorScale;
+    [SerializeField] private float floorOffset = 15f;
 
-    int debugCount = 0;
+    // int debugCount = 0;
 
     void Start()
     {
@@ -26,6 +26,6 @@ public class FloorSpawner : MonoBehaviour
         movedFloor.transform.position = new Vector3(0, 0, newZ);
         floors.Add(movedFloor);
 
-        Debug.Log("floor move happened " + debugCount++);
+        // Debug.Log("floor move happened " + debugCount++);
     }
 }

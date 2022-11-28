@@ -12,7 +12,7 @@ public class FireBullet : MonoBehaviour
 
     public void Start()
     {
-        playerScript = GetComponent<PlayerScript>(); ;
+        playerScript = GetComponent<PlayerScript>();
     }
 
     public void Shoot()
@@ -20,10 +20,6 @@ public class FireBullet : MonoBehaviour
         GameObject cB = Instantiate(bullet, spawnPoint.position, bullet.transform.rotation);
         Rigidbody rig = cB.GetComponent<Rigidbody>();
         rig.AddForce(spawnPoint.forward * bulletSpeed, ForceMode.Impulse);
-
-        Debug.Log("player fired");
-        
-        
     }
 
     public void Update()
@@ -33,7 +29,7 @@ public class FireBullet : MonoBehaviour
             Shoot();
             playerScript.currentAmmo--;
             // should be attached to the same gameobject
-            Debug.Log("ammo left " + playerScript.currentAmmo); 
+            Debug.Log("ammo left " + playerScript.currentAmmo);
         }
     }
 }

@@ -8,6 +8,9 @@ public class CameraChange : MonoBehaviour
     public Camera cam1D;
     public Camera cam2D;
     public Camera cam3D;
+
+    PlayerScript playerScript;
+    //int yes = playerScript.scoreMultiplier;
     
     void Start()
     {
