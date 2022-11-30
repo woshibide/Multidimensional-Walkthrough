@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBulletScript : MonoBehaviour
 {
+    float player;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Player"))
@@ -17,6 +19,16 @@ public class EnemyBulletScript : MonoBehaviour
         {
             Destroy(gameObject, 1.0f);
             //Debug.Log("bullet destroyed");
+        }
+    }
+
+    void Update()
+    {
+        
+
+        if (true)
+        {
+
         }
     }
 }
