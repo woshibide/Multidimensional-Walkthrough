@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyBulletScript : MonoBehaviour
 {
-    float player;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,21 +13,16 @@ public class EnemyBulletScript : MonoBehaviour
             collision.gameObject.GetComponent<PlayerScript>().TakeDamage(2);
             Destroy(gameObject);
         }
-
-        else
-        {
-            Destroy(gameObject, 1.0f);
-            //Debug.Log("bullet destroyed");
-        }
     }
 
     void Update()
     {
-        
+        GameObject player = GameObject.FindWithTag("Player");
 
-        if (true)
+        // destroy bullet if it passed behind player
+        if (gameObject.transform.position.z < player.transform.position.z - 3f)
         {
-
+            Destroy(gameObject);
         }
     }
 }

@@ -24,15 +24,21 @@ public class EnemyScript : MonoBehaviour
 
     void Update()
     {
+        GameObject player = GameObject.FindWithTag("Player");
+
         if (enemyHealth <= 0 && enemyDead == false)
         {
-            GameObject player = GameObject.FindWithTag("Player");
             var playerScript = player.GetComponent<PlayerScript>();
 
             playerScript.TakeDamage(-5);
             playerScript.deadEnemies++;
 
             enemyDead = true;
+            Destroy(gameObject);
+        }
+        // destroy enemy if player passed it by 
+        if (gameObject.transform.position.z < player.transform.position.z - 3f)
+        {
             Destroy(gameObject);
         }
     }
