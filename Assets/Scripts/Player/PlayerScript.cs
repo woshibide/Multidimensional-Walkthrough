@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 
@@ -17,7 +18,7 @@ public class PlayerScript : MonoBehaviour
     public int currentAmmo;
     public int maxAmmo = 35;
     public int minAmmo = 0;
-
+    //public Text = ammoDisplay;
 
     // score
     public int deadEnemies = 0;
@@ -25,6 +26,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Start()
     {
+
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Rigidbody.freezeRotation = true;
 
