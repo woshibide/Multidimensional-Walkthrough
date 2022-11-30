@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class FireBullet : MonoBehaviour
 {
     PlayerScript playerScript;
     GameObject player;
+
+    public MMFeedbacks DamageFeedback;
 
     public GameObject spawnPoint;
     public GameObject bullet;
@@ -24,9 +27,11 @@ public class FireBullet : MonoBehaviour
         GameObject cB = Instantiate(bullet, spawnPoint.transform.position, bullet.transform.rotation);
         Rigidbody rig = cB.GetComponent<Rigidbody>();
         rig.AddForce(spawnPoint.transform.forward * bulletSpeed, ForceMode.Impulse);
+        DamageFeedback.PlayFeedbacks();
+
     }
 
-    void Update()
+void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

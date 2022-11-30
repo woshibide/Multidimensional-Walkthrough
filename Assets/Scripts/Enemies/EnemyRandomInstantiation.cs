@@ -7,7 +7,6 @@ public class EnemyRandomInstantiation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("enemy spazwener box wpsohayhe");
         foreach (Transform t in transform)
         {
             if (t.CompareTag("Enemy"))

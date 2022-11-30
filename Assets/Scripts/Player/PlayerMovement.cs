@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position += new Vector3(
             horizontalInput * axisMoveSpeed * Time.deltaTime / 10,
             verticalInput * axisMoveSpeed * Time.deltaTime / 10,
-            forwardInput.y / 10);
+            ((100 + forwardInput.y) * Time.deltaTime / 10));
     }
 
     void Update()
