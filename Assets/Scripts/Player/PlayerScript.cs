@@ -15,7 +15,7 @@ public class PlayerScript : MonoBehaviour
 
     //ammo
     public int currentAmmo;
-    public int maxAmmo = 15;
+    public int maxAmmo = 35;
     public int minAmmo = 0;
 
 

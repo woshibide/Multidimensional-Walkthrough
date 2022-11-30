@@ -11,13 +11,13 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        Transform.Instantiate(enemyToSpawn, new Vector3(0, 0, 0), Quaternion.identity);
+        Transform.Instantiate(enemyToSpawn, new Vector3(0, 2.5f, 0), Quaternion.identity);
     }
 
     public void AwakeTheEvil()
     {
         float newZ = transform.position.z + spawnOffset;
-        Vector3 newRegion = transform.position = new Vector3(0, 0, newZ);
+        Vector3 newRegion = transform.position = new Vector3(0, 2.5f, newZ);
 
         Transform.Instantiate(enemyToSpawn, newRegion, Quaternion.identity);
     }
