@@ -4122,22 +4122,22 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 270934632100528131
-  - rid: 270934632100528132
-  - rid: 270934632100528134
-  - rid: 270934632100528135
-  - rid: 270934632100528136
+  - rid: 270934632100528137
+  - rid: 270934632100528138
+  - rid: 270934632100528139
+  - rid: 270934632100528140
+  - rid: 270934632100528141
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   ForceStopFeedbacksOnDisable: 1
   references:
     version: 2
     RefIds:
-    - rid: 270934632100528131
+    - rid: 270934632100528137
       type: {class: MMF_CinemachineImpulse, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.Cinemachine}
       data:
         Active: 1
-        UniqueID: -546141373
+        UniqueID: 1439686985
         Label: Cinemachine Impulse
         ChannelMode: 0
         Channel: 0
@@ -4240,11 +4240,11 @@ MonoBehaviour:
           m_PropagationSpeed: 343
         Velocity: {x: 0.1, y: 0.1, z: 0.3}
         ClearImpulseOnStop: 0
-    - rid: 270934632100528132
+    - rid: 270934632100528138
       type: {class: MMF_Vignette, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.PostProcessing}
       data:
         Active: 1
-        UniqueID: -1734702132
+        UniqueID: -1343048913
         Label: Vignette
         ChannelMode: 0
         Channel: 0
@@ -4306,8 +4306,8 @@ MonoBehaviour:
         Owner: {fileID: 2011753363}
         DebugActive: 0
         Duration: 0.2
-        ResetShakerValuesAfterShake: 1
-        ResetTargetValuesAfterShake: 1
+        ResetShakerValuesAfterShake: 0
+        ResetTargetValuesAfterShake: 0
         Intensity:
           serializedVersion: 2
           m_Curve:
@@ -4381,11 +4381,11 @@ MonoBehaviour:
         RemapColorZero: 0.828
         RemapColorOne: 0.887
         TargetColor: {r: 1, g: 1, b: 1, a: 0.4627451}
-    - rid: 270934632100528134
+    - rid: 270934632100528139
       type: {class: MMF_ChromaticAberration, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.PostProcessing}
       data:
         Active: 1
-        UniqueID: 1735890549
+        UniqueID: 727678248
         Label: Chromatic Aberration
         ChannelMode: 0
         Channel: 0
@@ -4447,8 +4447,8 @@ MonoBehaviour:
         Owner: {fileID: 2011753363}
         DebugActive: 0
         Duration: 0.2
-        ResetShakerValuesAfterShake: 1
-        ResetTargetValuesAfterShake: 1
+        ResetShakerValuesAfterShake: 0
+        ResetTargetValuesAfterShake: 0
         RemapIntensityZero: 0
         RemapIntensityOne: 1
         Intensity:
@@ -4486,11 +4486,11 @@ MonoBehaviour:
           m_RotationOrder: 4
         Amplitude: 1
         RelativeIntensity: 0
-    - rid: 270934632100528135
+    - rid: 270934632100528140
       type: {class: MMF_LensDistortion, ns: MoreMountains.FeedbacksForThirdParty, asm: MoreMountains.Feedbacks.PostProcessing}
       data:
         Active: 1
-        UniqueID: -628207779
+        UniqueID: -210596256
         Label: Lens Distortion
         ChannelMode: 0
         Channel: 0
@@ -4552,8 +4552,8 @@ MonoBehaviour:
         Owner: {fileID: 2011753363}
         DebugActive: 0
         Duration: 0.5
-        ResetShakerValuesAfterShake: 1
-        ResetTargetValuesAfterShake: 1
+        ResetShakerValuesAfterShake: 0
+        ResetTargetValuesAfterShake: 0
         RelativeIntensity: 0
         Intensity:
           serializedVersion: 2
@@ -4653,11 +4653,11 @@ MonoBehaviour:
           m_RotationOrder: 4
         RemapIntensityZero: 0
         RemapIntensityOne: 40
-    - rid: 270934632100528136
+    - rid: 270934632100528141
       type: {class: MMF_MMSoundManagerSound, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
       data:
         Active: 1
-        UniqueID: -1608497600
+        UniqueID: 147969117
         Label: MMSoundManager Sound
         ChannelMode: 0
         Channel: 0
